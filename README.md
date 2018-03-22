@@ -65,4 +65,4 @@ Possible improvement 1: Define the conditions that apply to line detection. exam
 
 Possible improvement 2: using Fitting Curves with Polynomial Terms in Linear Regression to draw the lanes instead
 
-
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/cubic.jpg?raw=true)
