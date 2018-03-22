@@ -44,7 +44,9 @@ In the project I used the "First method"
 
 Following is the outcome of the pipe line.
 
-[image1]:  output_solidYellowCurve.jpg 
+[image1]:  "output_solidYellowCurve.jpg"
+
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
 
 
 
