@@ -65,4 +65,4 @@ Possible improvement 1: Define the conditions that apply to line detection. exam
 
 Possible improvement 2: using Fitting Curves with Polynomial Terms in Linear Regression to draw the lanes instead
 
-![alt text] (http://cdn2.content.compendiumblog.com/uploads/user/458939f4-fe08-4dbc-b271-efca0f5a2682/742d7708-efd3-492c-abff-6044d78e3bbd/Image/1f947e9a2d3aa341b40d37ce738926e6/quadratic.gif)
+http://cdn2.content.compendiumblog.com/uploads/user/458939f4-fe08-4dbc-b271-efca0f5a2682/742d7708-efd3-492c-abff-6044d78e3bbd/Image/1f947e9a2d3aa341b40d37ce738926e6/quadratic.gif
