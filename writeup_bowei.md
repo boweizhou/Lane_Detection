@@ -55,14 +55,14 @@ Following is the outcome of the pipe line.
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+Potential shortcoming1: a lot of crake lines on top of the road, may cause the failure of detecting the real lanes
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+Potential shortcoming2: since the current softwaer can only draw two straight lines, it will not working when road is curving
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+Possible improvement 1: Define the conditions that apply to line detection. example: the angle of the line. 
 
-Another potential improvement could be to ...
+Possible improvement 2: using Fitting Curves with Polynomial Terms in Linear Regression to draw the lanes instead
+
+![alt text] (http://cdn2.content.compendiumblog.com/uploads/user/458939f4-fe08-4dbc-b271-efca0f5a2682/742d7708-efd3-492c-abff-6044d78e3bbd/Image/1f947e9a2d3aa341b40d37ce738926e6/quadratic.gif)
