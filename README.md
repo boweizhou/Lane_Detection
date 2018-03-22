@@ -1,56 +1,68 @@
 # **Finding Lane Lines on the Road** 
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-
-<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
-
-Overview
----
-
-When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
-
-In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
-
-To complete the project, two files will be submitted: a file containing project code and a file containing a brief write up explaining your solution. We have included template files to be used both for the [code](https://github.com/udacity/CarND-LaneLines-P1/blob/master/P1.ipynb) and the [writeup](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md).The code file is called P1.ipynb and the writeup template is writeup_template.md 
-
-To meet specifications in the project, take a look at the requirements in the [project rubric](https://review.udacity.com/#!/rubrics/322/view)
 
 
-Creating a Great Writeup
----
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
 
-1. Describe the pipeline
+**Finding Lane Lines on the Road**
 
-2. Identify any shortcomings
-
-3. Suggest possible improvements
-
-We encourage using images in your writeup to demonstrate how your pipeline works.  
-
-All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
+The goals / steps of this project are the following:
+1. Process the picture in a way easy to identify the lanes
+2. Find lanes on the picture
+3. Drawing lines on picture
+4. Drawing one extended line based of all detected lane on picture
+5. Apply the pipe line to the video 
 
 
-The Project
----
+### Reflection
 
-## If you have already installed the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) you should be good to go!   If not, you should install the starter kit to get started on this project. ##
+### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-**Step 1:** Set up the [CarND Term1 Starter Kit](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/83ec35ee-1e02-48a5-bdb7-d244bd47c2dc/lessons/8c82408b-a217-4d09-b81d-1bda4c6380ef/concepts/4f1870e0-3849-43e4-b670-12e6f2d4b7a7) if you haven't already.
+In my pipe line:
+First, I converted the images to grayscale, gray the image turn image cell color into "one number", which is for better and quicker edge detection 
 
-**Step 2:** Open the code in a Jupyter Notebook
+Second, I used Gaussian to smooth the image/ lower the noise
 
-You will complete the project code in a Jupyter notebook.  If you are unfamiliar with Jupyter Notebooks, check out <A HREF="https://www.packtpub.com/books/content/basics-jupyter-notebook-and-python" target="_blank">Cyrille Rossant's Basics of Jupyter Notebook and Python</A> to get started.
+Third, I applied Canny to the image using low_threshold = 50, and high_threshold = 100 to define the edge of the image
 
-Jupyter is an Ipython notebook where you can run blocks of code and see results interactively.  All the code for this project is contained in a Jupyter notebook. To start Jupyter in your browser, use terminal to navigate to your project directory and then run the following command at the terminal prompt (be sure you've activated your Python 3 carnd-term1 environment as described in the [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) installation instructions!):
+Fourth, I used a a four sided polygon masked the area only for lanes
 
-`> jupyter notebook`
+Fifth, I use Hough to define the lines in the image using the following parameter
+    rho = 1
+    theta = np.pi/180
+    threshold = 20
+    min_line_length = 20
+    max_line_gap = 300
 
-A browser window will appear showing the contents of the current directory.  Click on the file called "P1.ipynb".  Another browser window will appear displaying the notebook.  Follow the instructions in the notebook to complete the project.  
+At this points, I have got image together with bunch of small "lines" as the lanes. not single line on left and right side.
 
-**Step 3:** Complete the project and submit both the Ipython notebook and the project writeup
+Sixth, in order to draw a single line on the left and right lanes, I can think of two ways.
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+First method: we can find average slop, intercept on both right and left lines, then we can aquire two functions like y = ax +b. Using these two functions, we can draw two singal lines
 
+Second method: using the set of the points, we can simple use "linear regression" to draw both right and left lanes
+
+In the project I used the "First method"
+
+Following is the outcome of the pipe line.
+
+
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteRight.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowCurve.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowCurve2.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowLeft.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_whiteCarLaneSwitch.jpg?raw=true)
+
+
+### 2. Identify potential shortcomings with your current pipeline
+
+Potential shortcoming1: a lot of crake lines on top of the road, may cause the failure of detecting the real lanes
+
+Potential shortcoming2: since the current softwaer can only draw two straight lines, it will not working when road is curving
+
+### 3. Suggest possible improvements to your pipeline
+
+Possible improvement 1: Define the conditions that apply to line detection. example: the angle of the line. 
+
+Possible improvement 2: using Fitting Curves with Polynomial Terms in Linear Regression to draw the lanes instead
+
+![alt text] (http://cdn2.content.compendiumblog.com/uploads/user/458939f4-fe08-4dbc-b271-efca0f5a2682/742d7708-efd3-492c-abff-6044d78e3bbd/Image/1f947e9a2d3aa341b40d37ce738926e6/quadratic.gif)
