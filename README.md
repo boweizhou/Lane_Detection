@@ -41,6 +41,12 @@ First method: we can find average slop, intercept on both right and left lines, 
 Second method: using the set of the points, we can simple use "linear regression" to draw both right and left lanes
 
 In the project I used the "First method"
+In doing the line drawing, I masked the line point using the following condition to achieve better results.
+
+slope < -0.5 and slope > -0.9 
+slope < 0.9 and slope > 0.5 
+
+These two conditions will improve the quality of the line data to be used to draw the lines.
 
 Following is the outcome of the pipe line.
 
