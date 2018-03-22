@@ -45,7 +45,7 @@ In the project I used the "First method"
 Following is the outcome of the pipe line.
 
 
-![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true = = 250x250)
 ![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteRight.jpg?raw=true)
 ![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowCurve.jpg?raw=true)
 ![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowCurve2.jpg?raw=true)
