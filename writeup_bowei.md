@@ -42,8 +42,9 @@ Second method: using the set of the points, we can simple use "linear regression
 
 In the project I used the "First method"
 
+Following is the outcome of the pipe line.
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+[image1]: ./output_solidYellowCurve.jpg 
 
 
 
