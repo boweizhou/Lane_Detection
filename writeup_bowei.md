@@ -46,11 +46,11 @@ Following is the outcome of the pipe line.
 
 
 ![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
-![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteRight.jpg)
-![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
-![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
-![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
-![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteCurve.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidWhiteRight.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowCurve.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowCurve2.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_solidYellowLeft.jpg?raw=true)
+![alt text](https://github.com/boweizhou/Lane_Detection/blob/master/output_whiteCarLaneSwitch.jpg?raw=true)
 
 
 ### 2. Identify potential shortcomings with your current pipeline
